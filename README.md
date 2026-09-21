@@ -15,24 +15,6 @@ Campanha executada: 3 protocolos × 5 cargas (10–50 sensores) × 3 runs = **45
 
 </div>
 
-## Resultados principais
-
-- **Latência fim-a-fim (média)** cresce com a carga nos 3 protocolos; **MQTT é o
-  mais baixo e mais estável** (≈1,4 ms a 10 sensores → ≈42 ms a 50), HTTP e CoAP
-  disparam a partir de 30 sensores.
-- **p99** explode em carga alta para HTTP/CoAP (≈2,9–4,4 s em 50 sensores) por
-  filas/consulta; MQTT fica em ≈0,7 s.
-- **Throughput no broker** escala de forma quase linear com a carga nos 3
-  protocolos (MQTT ≈1,7 → 8,1 kb/s), com diferenças pequenas entre eles.
-- **Acurácia de detecção** estável em ≈81% nos 3 protocolos (determinística do
-  modelo, não varia com carga).
-- Viés de medição: a perda de 1,3–4,4% do HTTP é artefato do long-poll, não
-  perda real de rede.
-
-Os gráficos e tabelas usados no artigo estão em
-[`analise_host/`](analise_host/README.md) (`artigo_throughput.png`,
-`comparativo_protocolos.*`, `graficos_comparativo/`).
-
 ## Como executar
 
 ### Pré-requisitos
