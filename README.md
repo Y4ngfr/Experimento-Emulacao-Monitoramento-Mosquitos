@@ -104,17 +104,6 @@ para os três protocolos — ver `analise_host/README.md` para a fonte exata dos
 ficou **fora** do versionamento deste repositório: a perspectiva desta campanha
 é a topologia 1. Se precisar dela, recupere do histórico local.
 
-## Notas de integridade dos dados
-
-- 45 runs válidos; `n_stas_csv == carga` em todos; 71 colunas sem vazios; `status=ok`.
-- MQTT interrompido no c50 e completado pela fusão de `experimento_20260915_020930`
-  (3 runs c50) — nota no `experimento.log`.
-- Dois runs MQTT (c30_run1, c40_run1) com 1 sensor que falhou associação;
-  mantidos (CSV zerado conta 0 no agregado, impacto <0,5%).
-- `dados/experimentos/experimento_20260915_044853` (HTTP abortado) e
-  `experimento_20260917_144838` (smoke, 1 run) foram descartados; `dados2/`,
-  `dados3/` e `dados/{mqtt,http,coap,metricas}` são sobras de teste fora da campanha.
-
 ## Licença
 
 Sem licença definida (uso acadêmico). Consulte os autores antes de reuse.
