@@ -1,0 +1,13 @@
+[2026-09-15 02:09:30] === EXPERIMENTO experimento_20260915_020930 ===
+[2026-09-15 02:09:30] Cargas: [50] (APs: [5]) | runs/carga: 3 | tempo/run: 300s | protocolo: mqtt
+[2026-09-15 02:09:30] Rede: raio=60m raio_min=30m dist_aps=150m canal=3 sysloss=1 exp=2 var=4
+[2026-09-15 02:09:30] Tempo estimado total: ~42 min
+[2026-09-15 02:09:30] === CARGA 50 sensores (5 APs) ===
+[2026-09-15 02:09:30]   run 1/3 (carga 50) comecando...
+[2026-09-15 02:24:06]   [OK] c50_run1 -> /app/dados/experimentos/experimento_20260915_020930/metricas_por_run.csv
+[2026-09-15 02:24:06]   run 2/3 (carga 50) comecando...
+[2026-09-15 02:38:35]   [OK] c50_run2 -> /app/dados/experimentos/experimento_20260915_020930/metricas_por_run.csv
+[2026-09-15 02:38:35]   run 3/3 (carga 50) comecando...
+[2026-09-15 02:53:04]   [OK] c50_run3 -> /app/dados/experimentos/experimento_20260915_020930/metricas_por_run.csv
+[2026-09-15 02:53:04] === EXPERIMENTO experimento_20260915_020930 CONCLUIDO ===
+[2026-09-15 02:53:04] Resultados em: /app/dados/experimentos/experimento_20260915_020930

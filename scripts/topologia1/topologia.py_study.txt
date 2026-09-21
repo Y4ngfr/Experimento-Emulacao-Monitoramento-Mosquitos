@@ -1,0 +1,231 @@
+#########################################################
+#                   Tabela de IPs                       #
+#########################################################
+servidor = '11.0.0.10/16'
+
+# O primeiro ip dado ao gw também é o ip de sua primeira interface
+gw = '11.0.0.1/16' # portanto gw-eth0 = 11.0.0.1/16
+
+# interfaces do gateway para os clusters:
+gw-eth1 = '10.0.0.1/16'
+gw-eth2 = '10.1.0.1/16'
+gw-eth3 = '10.2.0.1/16'
+gw-eth4 = '10.3.0.1/16'
+...
+gw-ethn = '10.(n-1).0.1/16'
+
+sensor-ap0[0] = '10.0.0.10'
+sensor-ap0[1] = '10.0.0.11'
+sensor-ap0[2] = '10.0.0.12'
+sensor-ap0[245] = '10.0.0.255'
+sensor-ap0[246] = '10.0.1.10'
+sensor-ap0[n] = '10.0.255.254'
+
+sensor-ap1[0] = '10.1.0.10'
+sensor-ap1[1] = '10.1.0.11'
+sensor-ap1[2] = '10.1.0.12'
+sensor-ap1[245] = '10.1.0.255'
+sensor-ap1[246] = '10.1.1.10'
+sensor-ap1[n] = '10.1.255.254'
+
+sensor-apn[0] = '10.255.0.10'
+sensor-apn[1] = '10.255.0.11'
+sensor-apn[2] = '10.255.0.12'
+sensor-apn[245] = '10.255.0.255'
+sensor-apn[246] = '10.255.1.10'
+sensor-apn[n] = '10.255.255.254'
+
+# Observe que os sensores precisam estar na mesma subrede de uma interface do gateway
+
+cientista1 = '11.0.0.20/16'
+cientista2 = '11.0.0.21/16'
+cientista3 = '11.0.0.22/16'
+
+# Acess points não possuem ip
+
+# Outras interfaces do gateway atribuir a endereços como:
+gw-ethx = '11.0.0.2'
+gw-ethy = '11.0.0.3'
+...
+
+
+#########################################################
+#                   Deposit Garbage                     #
+#########################################################
+
+#!/usr/bin/env python3
+"""
+Topologia para Monitoramento de Mosquitos
+- 3 Clusters (APs) com 5 sensores cada
+- 1 Servidor Central
+- 3 Cientistas (clientes)
+- Backhaul via Ethernet
+
+Uso:
+  python3 topologia.py              # sem visualização gráfica
+  python3 topologia.py --plot       # com visualização gráfica
+  python3 topologia.py --mqtt       # sobe também o cenário MQTT-SN
+  python3 topologia.py --http       # sobe também o cenário HTTP (ramificação)
+  python3 topologia.py --coap       # sobe também o cenário CoAP (ramificação)
+  python3 topologia.py --mqtt --dash # MQTT + forwarder p/ ThingsBoard (nó "console")
+
+Variáveis de ambiente:
+  MININET_SENSORES=N  cria apenas N sensores (padrão 15; reduzido p/ pouca RAM)
+"""
+
+"""
+Topologia personalizada para monitoramento de mosquitos
+USANDO Mininet-wifi DIRETAMENTE (não herda de Topo)
+
+Fases de montagem (importante a ordem):
+    1. construir_nos()        -> cria hosts, APs e STAs
+    2. add_backhaul_links()   -> links Ethernet (não precisam de wintfs)
+    3. configureNodes()       -> cria as interfaces wireless (wintfs)
+    4. build()/start()
+    5. associar_wifi()        -> associa sensores aos APs APÓS o hostapd
+    6. configurar_rede()      -> roteamento e forwarding (pós-start)
+"""
+
+# ========== NÓ CONSOLE (nó no netns do host, porta p/ ThingsBoard) ==========
+# Host convencional (não-STA/AP), com inNamespace=False: as interfaces
+# deste nó são criadas NO NETNS DO HOST (raiz). Como o container roda
+# com --network host, o nó "console" equivale a uma interface do SO do
+# host. O THINGSBOARD (container docker no host, MQTT publicado em
+# 0.0.0.0:1883 do host) fica alcançável de dentro da topologia via o
+# endereço 10.10.0.2 deste nó — sem depender de bridge/switch algum.
+
+"""
+    Associa sensores aos APs DEPOIS de net.start() (hostapd no ar).
+    No ambiente atual (kernel 6.12 + hwsim + netns), associar durante o
+    configureNodes travava ("Operation already in progress" / EBUSY),
+    pois o connect era emitido antes de o hostapd do AP existir.
+
+    Otimização de tempo: em vez de retries apressados (3x timeout 12s +
+    sleep 3s por sensor, que gerava retries desnecessários quando a
+    associação levava mais de 3s), faz um iw connect com timeout CURTO e
+    depois um POLL PACIENTE de até ~10s no iw link. Assim cada sensor
+    paga só o que precisa: ~1-4s saudável, ~10s degradado, sem retry.
+"""
+
+"""
+    Configura roteamento e forwarding DEPOIS de a rede estar no ar.
+    Não pode rodar antes de net.start(): os processos dos nós ainda
+    não existem nesse momento.
+
+    Corrige também deficiências do cenário (veths do gw sem IP, bridge
+    do AP sem IP, rádio fora da bridge, associação adiada) que faziam o
+    pingall falhar neste ambiente.
+"""
+
+# Ordem dos addLink do backhaul/cabo: srv(gw-eth0), ap1(gw-eth1),
+# ap2(gw-eth2), ap3(gw-eth3), cient1..3(gw-eth4..6).
+#
+# ===== Desenho de rede (padrão Mininet-WiFi) =====
+# O gateway senta NA MESMA SUBNET de cada cluster, via veths ligados
+# à bridge do AP: gw-eth1=10.0.1.1/24, gw-eth2=10.0.2.1/24,
+# gw-eth3=10.0.3.1/24. O IP "10.0.x.1" (default gw dos sensores) é
+# do GATEWAY, não do AP. O AP host fica totalmente fora do caminho
+# L3: não tem IP na bridge, não tem rota nem ip_forward; é só uma
+# ponte L2 (OVS bridge + NORMAL) entre o rádio e o veth do gw.
+#
+# Assim o único forwarding L3 necessário é o do gateway (host
+# Mininet com ip_forward) e o do srv1 — ambos já comprovados
+# funcionando. O kernel do AP (root netns) nunca mais roteia
+# pacotes do rádio, eliminando o gargalo que travava o experimento.
+
+#!/usr/bin/env python3
+"""
+Cenário MQTT-SN para a topologia de monitoramento de mosquitos.
+
+Sobe no servidor central (srv1) o broker MQTT (mosquitto), o gateway
+MQTT-SN (bisquitt) e o coletor de metadados em `meta/#`; nos cientistas,
+assinantes MQTT em `meta/#`; nas 15 STAs, o sensoriamento de áudio fake
+(ouvir -> classificar na borda -> publicar metadados) via MQTT-SN.
+"""
+
+#!/usr/bin/env python3
+"""
+Publicador MQTT-SN para sensores da WSN.
+
+Roda em cada STA (sensor) do Mininet-WiFi. Envia medições via MQTT-SN (UDP)
+para o gateway (bisquitt) que roda no servidor central.
+
+Uso:
+  python3 sensor_pub.py --gw 10.0.0.10 --port 1884 \
+      --id sta1 --topic sensors/cluster1/sta1 --interval 2 --nocount=0
+"""
+
+#########################################################
+#                     Case Study                        #
+#########################################################
+
+from mn_wifi.net import Mininet_wifi
+"""
+    Mininet_wifi é a classe central do mininet wifi. É o orquestrador da topologia.
+    Ela cria a instância self.net que gerencia todos os nós, links, controladores, plot
+    e ciclo de vida.
+
+    Alguns exemplos de funções e métodos comuns:
+    . Mininet_wifi(link=..., wmediumd_mode=..., plot=...)
+    . net.addHost()
+    . net.addStation()
+    . net.addAccessPoint()
+    . net.addController()
+    . net.addLink()
+    . net.configureNodes()
+    . net.build()
+    . net.start()
+    . net.stop()
+    . net.plotGraph()
+    . net['srv1']   (indexação de nós) 
+"""
+
+from mn_wifi.node import OVSKernelAP
+"""
+    OVSKernelAP é a classe que representa o Acess Point que roda em nível de kernel.
+    Possui alguns atributos:
+    . wintfs
+    . params['ssid']
+    . cmd()
+"""
+
+from mn_wifi.cli import CLI
+"""
+    Interface de linha de comando nativa do Mininet-WiFi. Abre o prompt 
+   ' mininet-wifi> ' no terminal
+"""
+
+from mn_wifi.link import wmediumd
+"""
+    Classe/função que ativa o wmediumd
+
+    Com o wmediumd não é recomendável utilizar o node.wintfs, pois algumas
+    implementações do Wmediumd para o cálculo do sinal não são transferidas para o
+    Mininet-WiFi. Ao invés disso utilizar iw ou iwconfig.
+"""
+
+from mn_wifi.wmediumdConnector import interference
+"""
+    Módulo que define o modo de operação do wmediumd. interference diz ao wmediumd para 
+    calcular interferência entre todos os pares de nós (mais realista, mais custoso).
+"""
+
+from mininet.log import setLogLevel, info
+"""
+    Utilitários de logging do Mininet
+"""
+
+from mininet.node import Host
+"""
+
+"""
+
+from mininet.topo import Topo
+"""
+
+"""
+
+"""
+    É possível definir txpower dos dispositivos e o mininet vai calcular automaticamente
+    o range que o dispositivos alcança a partir dos parâmetros.
+"""

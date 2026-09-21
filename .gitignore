@@ -1,0 +1,45 @@
+# =====================================================================
+# Repositorio do experimento WSN-WiFi (topologia1: MQTT/HTTP/CoAP)
+# =====================================================================
+
+# ---- Python ---------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipython/
+
+# ---- Datasets de audio (grandes ~1,5 GB; montados via tmpfs) --------
+scripts/topologia1/Dataset/
+scripts/topologia1/Dataset-corrigido/
+scripts/topologia1/Dataset-processado/
+
+# ---- Resultados experimentais brutos (logs gigantes) ----------------
+# Mantemos apenas metricas_por_run.csv e experimento.log; raw/ e graficos
+# de corrida gerados em massa ficam fora do versionamento.
+dados/experimentos/*/raw/
+dados/experimentos/*/graficos/
+
+# ---- Diretorios de teste / sobras fora da campanha -------------------
+dados/mqtt/
+dados/http/
+dados/coap/
+dados/metricas/
+dados2/
+dados3/
+
+# ---- Experimentos descartados ------------------------------------------
+dados/experimentos/experimento_20260915_044853/   # HTTP abortado
+dados/experimentos/experimento_20260917_144838/   # smoke (1 run)
+
+# ---- Topologia 2 (fora do escopo do repositorio) ----------------------
+scripts/topologia2/
+
+# ---- Documentacao / ferramentas locais --------------------------------
+docs/mininet-wifi/.obsidian/
+docs/mininet-wifi/*.pdf
+session-*.md
+
+# ---- Sistema / edicao --------------------------------------------------
+.vscode/
+.idea/
+*.swp

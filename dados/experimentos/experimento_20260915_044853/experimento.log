@@ -1,0 +1,6 @@
+[2026-09-15 04:48:53] === EXPERIMENTO experimento_20260915_044853 ===
+[2026-09-15 04:48:53] Cargas: [10, 20, 30, 40, 50] (APs: [1, 2, 3, 4, 5]) | runs/carga: 3 | tempo/run: 300s | protocolo: http
+[2026-09-15 04:48:53] Rede: raio=60m raio_min=30m dist_aps=150m canal=3 sysloss=1 exp=2 var=4
+[2026-09-15 04:48:53] Tempo estimado total: ~210 min
+[2026-09-15 04:48:53] === CARGA 10 sensores (1 APs) ===
+[2026-09-15 04:48:53]   run 1/3 (carga 10) comecando...

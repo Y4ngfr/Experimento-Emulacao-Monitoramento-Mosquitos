@@ -1,0 +1,206 @@
+CSV: dados/experimentos/experimento_20260915_073606/metricas_por_run.csv
+Metricas: 51 | cargas: [10, 20, 30, 40, 50] | saída: analise_host/experimento_20260915_073606/graficos
+gerado: analise_host/experimento_20260915_073606/graficos/ap_beacon_loss.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  ap_beacon_loss               | 0±0(3)          0±0(3)          0±0(3)          0±0(3)          0±0(3)          
+gerado: analise_host/experimento_20260915_073606/graficos/ap_bitrate_media_mbps.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  ap_bitrate_media_mbps        | 40.7±2.81(3)    41.6±1.84(3)    44.4±0.811(3)   45.8±1.51(3)    46.7±1.1(3)     
+gerado: analise_host/experimento_20260915_073606/graficos/ap_failed.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  ap_failed                    | 0±0(3)          0±0(3)          0±0(3)          0±0(3)          0±0(3)          
+gerado: analise_host/experimento_20260915_073606/graficos/ap_peer_tx_pkts.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  ap_peer_tx_pkts              | 373.3±13.1(3)   388.3±25.4(3)   590.3±63.3(3)   609.7±20.6(3)   640.0±40.4(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/ap_pkts_rx.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  ap_pkts_rx                   | 373.3±13.1(3)   371.7±15.4(3)   470.3±27.8(3)   493.3±19.1(3)   523.0±17(3)     
+gerado: analise_host/experimento_20260915_073606/graficos/ap_pkts_tx.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  ap_pkts_tx                   | 404.0±15.1(3)   415.7±26.6(3)   691.7±81.1(3)   724.7±16.3(3)   753.3±56.3(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/ap_retries.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  ap_retries                   | 0±0(3)          0±0(3)          0±0(3)          0±0(3)          0±0(3)          
+gerado: analise_host/experimento_20260915_073606/graficos/ap_rssi_media_dbm.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  ap_rssi_media_dbm            | -46.7±0.404(3)  -46.4±0.333(3)  -47±0.158(3)    -46.9±0.309(3)  -46.8±0.0416(3) 
+gerado: analise_host/experimento_20260915_073606/graficos/app_dups.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  app_dups                     | 0±0(3)          0±0(3)          0±0(3)          3±3(3)          17±3.46(3)      
+gerado: analise_host/experimento_20260915_073606/graficos/app_gaps.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  app_gaps                     | 0±0(3)          0±0(3)          0±0(3)          0±0(3)          0±0(3)          
+gerado: analise_host/experimento_20260915_073606/graficos/app_goodput_media_kbps.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  app_goodput_media_kbps       | 1.62±0.000809(3)3.24±0.00116(3) 7.44±0.192(3)   8.11±1.74(3)    9.69±1.11(3)    
+gerado: analise_host/experimento_20260915_073606/graficos/app_goodput_sustentado_kbps.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  app_goodput_sustentado_kbps  | 1.68±0.000896(3)3.35±0.000872(3)4.74±0.0809(3)  6.44±0.0954(3)  7.77±0.288(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/app_lat_max_ms.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  app_lat_max_ms               | 55.5±24.5(3)    81.6±12.5(3)    2987.1±16.7(3)  4320.4±2327.7(3)1.13e+04±6848.8(3)
+gerado: analise_host/experimento_20260915_073606/graficos/app_lat_media_ms.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  app_lat_media_ms             | 8.51±1.27(3)    10±0.8(3)       57.5±8.69(3)    117.1±21.4(3)   187.8±28.9(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/app_lat_min_ms.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  app_lat_min_ms               | 2.58±0.0632(3)  2.55±0.0483(3)  2.58±0.0981(3)  2.5±0.0649(3)   2.45±0.0432(3)  
+gerado: analise_host/experimento_20260915_073606/graficos/app_lat_p50_ms.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  app_lat_p50_ms               | 6.71±0.167(3)   7.47±0.78(3)    6.51±0.109(3)   6.33±0.442(3)   6.13±0.572(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/app_lat_p90_ms.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  app_lat_p90_ms               | 12.9±1.28(3)    16.7±4.12(3)    14.5±2.13(3)    16.3±3.47(3)    21.4±5.35(3)    
+gerado: analise_host/experimento_20260915_073606/graficos/app_lat_p99_ms.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  app_lat_p99_ms               | 18±3.33(3)      23.6±1.2(3)     645.3±70.6(3)   1048.1±125.6(3) 1882.6±308.6(3) 
+gerado: analise_host/experimento_20260915_073606/graficos/app_lat_p99_ms_all.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  app_lat_p99_ms_all           | 39.3±20.7(3)    54.6±12.2(3)    1907.9±722.4(3) 2693.6±114.6(3) 2923.6±22.7(3)  
+gerado: analise_host/experimento_20260915_073606/graficos/app_msgs_total.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  app_msgs_total               | 660.0±0(3)      1380.0±0(3)     1920.0±60(3)    2620.0±34.6(3)  3180.0±103.9(3) 
+gerado: analise_host/experimento_20260915_073606/graficos/app_perda_pct.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  app_perda_pct                | 0±0(3)          0±0(3)          0±0(3)          0±0(3)          0±0(3)          
+gerado: analise_host/experimento_20260915_073606/graficos/broker_clients.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  broker_clients               | 3±0(3)          3±0(3)          3±0(3)          3±0(3)          3±0(3)          
+gerado: analise_host/experimento_20260915_073606/graficos/broker_msg_recv.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  broker_msg_recv              | 220.0±0(3)      440.0±0(3)      635.7±11.7(3)   870.3±16.7(3)   1059.0±38.4(3)  
+gerado: analise_host/experimento_20260915_073606/graficos/broker_msg_sent.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  broker_msg_sent              | 660.0±0(3)      1320.0±0(3)     1907.0±35(3)    2611.0±50.2(3)  3177.0±115.3(3) 
+gerado: analise_host/experimento_20260915_073606/graficos/broker_pub_sent.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  broker_pub_sent              | 660.0±0(3)      1320.0±0(3)     1907.0±35(3)    2611.0±50.2(3)  3177.0±115.3(3) 
+gerado: analise_host/experimento_20260915_073606/graficos/broker_rx_kbps.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  broker_rx_kbps               | 1.6±0.000203(3) 3.2±0.000255(3) 4.63±0.0861(3)  6.35±0.123(3)   7.72±0.281(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/broker_tx_kbps.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  broker_tx_kbps               | 4.8±0.00061(3)  9.6±0.000764(3) 13.9±0.258(3)   19±0.368(3)     23.2±0.844(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/det_acuracia_pct.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_acuracia_pct             | 80.9±0(3)       80.9±0(3)       80.9±0.183(3)   80.8±0.0252(3)  81.3±0.115(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/det_classe_0_obs.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_classe_0_obs             | 22±0(3)         47±0(3)         71.3±0.577(3)   97.3±2.08(3)    112.7±4.04(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/det_classe_0_ok.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_classe_0_ok              | 17±0(3)         39±0(3)         63.3±0.577(3)   81.3±2.08(3)    94±4.36(3)      
+gerado: analise_host/experimento_20260915_073606/graficos/det_classe_0_taxa_pct.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_classe_0_taxa_pct        | 77.3±0(3)       83±0(3)         88.8±0.0924(3)  83.6±0.354(3)   83.4±0.972(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/det_classe_1_obs.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_classe_1_obs             | 59±0(3)         116.0±0(3)      178.0±7.81(3)   249.3±5.03(3)   295.7±11.9(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/det_classe_1_ok.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_classe_1_ok              | 36±0(3)         61±0(3)         93±4.58(3)      139.7±2.08(3)   168.3±7.23(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/det_classe_1_taxa_pct.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_classe_1_taxa_pct        | 61±0(3)         52.6±0(3)       52.2±0.696(3)   56±0.49(3)      56.9±0.48(3)    
+gerado: analise_host/experimento_20260915_073606/graficos/det_classe_2_obs.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_classe_2_obs             | 29±0(3)         52±0(3)         66±2(3)         92±1(3)         105.7±7.57(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/det_classe_2_ok.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_classe_2_ok              | 13±0(3)         28±0(3)         36±2.65(3)      50±1(3)         57.7±4.16(3)    
+gerado: analise_host/experimento_20260915_073606/graficos/det_classe_2_taxa_pct.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_classe_2_taxa_pct        | 44.8±0(3)       53.9±0(3)       54.5±3.01(3)    54.3±0.495(3)   54.6±0.414(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/det_classe_3_obs.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_classe_3_obs             | 120.0±0(3)      245.0±0(3)      334.7±5.69(3)   443.0±6.08(3)   547.7±17.9(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/det_classe_3_ok.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_classe_3_ok              | 120.0±0(3)      244.0±0(3)      333.3±5.13(3)   441.7±6.66(3)   542.7±17.9(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/det_classe_3_taxa_pct.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_classe_3_taxa_pct        | 100.0±0(3)      99.6±0(3)       99.6±0.167(3)   99.7±0.139(3)   99.1±0.0321(3)  
+gerado: analise_host/experimento_20260915_073606/graficos/det_corretas.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_corretas                 | 186.0±0(3)      372.0±0(3)      525.7±8.5(3)    712.7±11(3)     862.7±33.5(3)   
+gerado: analise_host/experimento_20260915_073606/graficos/det_n_total.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  det_n_total                  | 230.0±0(3)      460.0±0(3)      650.0±11.1(3)   881.7±13.7(3)   1061.7±41.3(3)  
+gerado: analise_host/experimento_20260915_073606/graficos/sta_beacon_loss.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  sta_beacon_loss              | 0±0(3)          0±0(3)          0±0(3)          0±0(3)          0±0(3)          
+gerado: analise_host/experimento_20260915_073606/graficos/sta_bitrate_media_mbps.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  sta_bitrate_media_mbps       | 46.2±0.32(3)    47.8±0.505(3)   46.4±0.715(3)   47.7±0.666(3)   47±1.47(3)      
+gerado: analise_host/experimento_20260915_073606/graficos/sta_bytes_rx.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  sta_bytes_rx                 | 5.54e+04±5046.4(3)1.01e+05±2575.8(3)2.4e+05±1.4e+04(3)3.48e+05±7721.4(3)4.08e+05±2.28e+04(3)
+gerado: analise_host/experimento_20260915_073606/graficos/sta_bytes_tx.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  sta_bytes_tx                 | 8.3e+04±775.7(3)1.67e+05±1786.1(3)2.92e+05±9207.5(3)4.18e+05±8478.3(3)5.21e+05±2.21e+04(3)
+gerado: analise_host/experimento_20260915_073606/graficos/sta_failed.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  sta_failed                   | 0±0(3)          0±0(3)          0±0(3)          0±0(3)          0±0(3)          
+gerado: analise_host/experimento_20260915_073606/graficos/sta_pkts_rx.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  sta_pkts_rx                  | 665.7±37.6(3)   1276.3±34(3)    4087.0±350.1(3) 6136.0±106.6(3) 7305.7±550.6(3) 
+gerado: analise_host/experimento_20260915_073606/graficos/sta_pkts_tx.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  sta_pkts_tx                  | 373.3±13.1(3)   764.0±29.9(3)   1878.0±124.4(3) 2767.3±61.6(3)  3425.3±182.0(3) 
+gerado: analise_host/experimento_20260915_073606/graficos/sta_retries.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  sta_retries                  | 0±0(3)          0±0(3)          0±0(3)          0±0(3)          0±0(3)          
+gerado: analise_host/experimento_20260915_073606/graficos/sta_rssi_media_dbm.png
+  carga                        | 10              20              30              40              50              
+                               | media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)    media±desv(n)   
+  sta_rssi_media_dbm           | -46.7±0.404(3)  -46.4±0.333(3)  -47±0.158(3)    -46.9±0.309(3)  -46.8±0.0416(3) 
